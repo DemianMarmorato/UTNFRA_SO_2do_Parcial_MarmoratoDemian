@@ -585,3 +585,83 @@ git submodule
 ls
 git submodule deinit -f UTN-FRA_SO_Examenes
 ls
+git add .
+git commit -m "error resuelto"
+git push origin main
+git rm -f UTN-FRA_SO_Examenes
+ls
+rm -rf .git/modules/UTN-FRA_SO_Examenes
+ls
+git reflog
+git pull
+git pull origin main
+ls
+mv /tmp/UTN-FRA_SO_Examenes/* UTN-FRA_SO_Examenes/
+mv UTN-FRA_SO_Examenes /tmp/UTN-FRA_SO_Examenes
+git submodule deinit -f UTN-FRA_SO_Examenes
+git rm -f UTN-FRA_SO_Examenes
+rm -rf .git/modules/UTN-FRA_SO_Examenes
+ls
+mkdir UTN-FRA_SO_Examenes
+ls
+cd UTN-FRA_SO_EXAMENES
+ls
+cd UTN-FRA_SO_Examenes/
+ls
+cd..
+cd ..
+ls
+git clone git clone https://github.com/upszot/UTN-FRA_SO_Examenes.git
+git clone https://github.com/upszot/UTN-FRA_SO_Examenes.git
+ls
+cd
+ls
+cd
+ls
+cd ..
+ls
+cd
+ls
+cd ..
+ls
+cd UTN-FRA_SO_Examenes/
+ls
+cd 202406
+ls
+cd ansible
+ls
+cd roles
+ls
+cd 2do_parcial/
+ls
+ls -l
+cd ..
+ls
+ls -l
+clear
+ls -l
+mv [200~202406
+mv 202406 /root/UTN-FRA_SO_Examenes/
+cd /root
+ls
+cd UTN-FRA_SO_Examenes/
+ls
+cd ..
+cd..
+cd ..
+ls
+cd 
+ls
+cd RTA_Examen_20241117/
+ls
+./Punto_B.sh
+ls
+./Punto_C.sh 
+ls
+./Punto_D.sh 
+sudo bash Punto_D.sh
+sudo nano /root/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml
+sudo bash Punto_D.sh
+ls
+cd ..
+ls

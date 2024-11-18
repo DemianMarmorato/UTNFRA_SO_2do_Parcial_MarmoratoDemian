@@ -1,0 +1,7 @@
+---
+- name: Configuración del 2do Parcial
+  hosts: localhost
+  tasks:
+    - include_role:
+        name: 2do_parcial
+
