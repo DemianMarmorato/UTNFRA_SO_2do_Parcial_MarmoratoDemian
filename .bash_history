@@ -392,3 +392,22 @@ asd
 clear
 git remote add origin git@github.com:DemianMarmorato/UTNFRA_SO_2do_Parcial_MarmoratoDemian.git
 ls
+git add .
+ls
+git push origin main
+git init
+git remote add origin git@github.com:DemianMarmorato/UTNFRA_SO_2do_Parcial_MarmoratoDemian.git
+git add RTA_Examen_20241117/ UTN-FRA_SO_Examenes/
+git commit -m "Entrega 2do Parcial"
+git push -u origin main
+git remote -v
+git remote set-url origin git@github.com:DemianMarmorato/UTNFRA_SO_2do_Parcial_MarmoratoDemian.git
+ssh -T git@github.com
+git push -u origin main
+git pull
+git pull main
+git branch
+clear
+git remote remove origin
+git remote add origin git@github.com:DemianMarmorato/UTNFRA_SO_2do_Parcial_MarmoratoDemian.git
+git remote -v
