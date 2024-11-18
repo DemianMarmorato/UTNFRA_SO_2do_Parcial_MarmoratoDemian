@@ -4,8 +4,8 @@
 cd /root/UTN-FRA_SO_Examenes/202406/docker/
 
 id
-docker login -u TOKYYO9
-dckr_pat_JtMbG-GqkTP5mekxEI6uaSY_e5Q
+docker login -u demmoratto 
+# TUVE QUE ELIMINAR EL TOKEN POR QUE GIT DICE QUE ES UNA VIOLACION A LAS REGLAS, Y NO PERMITÍA EL PUSH.
 
 
 echo "<div>

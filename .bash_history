@@ -308,3 +308,87 @@ ls
 cd ..
 ls
 git init
+git add .
+clear
+ls
+cd RTA_Examen_20241117/
+LS
+ls
+git init
+git add .
+[200~git branch -M main
+~git branch -M main
+git branch -M main
+git remote add origin https://github.com/DemianMarmorato/UTNFRA_SO_2do_Parcial_DemianMarmorato
+git push -u origin main
+git push origin main
+git remote add origin https://github.com/DemianMarmorato/UTNFRA_SO_2do_Parcial_DemianMarmorato
+git add .
+clear
+git commit -m "Add: Entrega de segundo parcial"
+git branch -M main
+git push -u origin main
+git push origin main
+clear
+git push origin main
+git pull
+git push origin main
+git pull
+git pull https://github.com/DemianMarmorato/UTNFRA_SO_2do_Parcial_DemianMarmorato main
+git config pull.rebase false
+git pull https://github.com/DemianMarmorato/UTNFRA_SO_2do_Parcial_DemianMarmorato main
+ls
+git pull https://github.com/DemianMarmorato/UTNFRA_SO_2do_Parcial_DemianMarmorato main
+git push origin main
+clear
+git config --global user.name "Demian"
+git config --global user.email "marmorato.demian@gmail.com"
+ssh-keygen -t rsa -b 4096 -C "marmorato.demian@gmail.com"
+cat ~/.ssh/id_rsa.pub
+ls
+cd ..
+ls
+git init
+ls
+git remote add origin git@github.com:DemianMarmorato/UTNFRA_SO_2do_Parcial_DemianMarmorato.git
+git add RTA_Examen_20241117/ UTN-FRA_SO_Examenes/
+git commit -m "Entrega 2do parcial"
+git push origin main
+git branch
+git checkout master
+git push origin master
+https://docs.github.com/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line#resolving-a-blocked-push
+clear
+git push --force origin master
+ls
+cd RTA_Examen_20241117/
+ls
+nano Punto_C.sh 
+cd ..
+ls
+git push --force origin master
+cd RTA_Examen_20241117/
+nano Punto_C.sh 
+CD ..
+ls
+cd ..
+git push --force origin master
+git branch
+git checkout main
+git chekout main
+git checkout main
+[200~git checkout -b main master
+git checkout -b main master
+git branch
+git merge master
+git push -u origin main
+[200~git pull origin main
+git pull origin main
+git merge master
+git pull origin main
+git config pull.rebase false
+git pull origin main
+asd
+clear
+git remote add origin git@github.com:DemianMarmorato/UTNFRA_SO_2do_Parcial_MarmoratoDemian.git
+ls
