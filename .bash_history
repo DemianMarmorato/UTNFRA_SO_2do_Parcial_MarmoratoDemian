@@ -519,3 +519,60 @@ ls
 git push origin main
 clear
 git add.
+git add .
+git commit -m "Se corrigieron errores"
+git push origin main
+clear
+cd /root/UTN-FRA_SO_Examenes
+git init
+git add .
+git commit -m "Añadir proyecto Ansible para 2do Parcial"
+git remote add origin git@github.com:DemianMarmorato/UTNFRA_SO_2do_Parcial_MarmoratoDemian.git
+git push -u origin main
+git pull
+git push -u origin main
+git branch
+git branch -m master main
+git branch
+git push -u origin main
+git remote -v
+git remote set-url origin https://github.com/DemianMarmorato/UTNFRA_SO_2do_Parcial_MarmoratoDemian.git
+git remote -v
+git push -u origin main
+git pull
+ls
+cd 202406
+ls
+cd ansible
+ls
+ls -l
+cd roles
+ls
+cd 2do_parcial/
+ls
+clear
+git push -u origin main
+git pull origin main
+git config pull.rebase false
+git pull origin main
+git branch
+git add .
+clear
+cd ..
+ls
+git push origin main
+git pull origin main
+git pull origin main --allow-unrelated-histories
+nano README.md
+ls
+git push origin main
+clear
+ls
+git add .
+git commit "Se arregló error de github"
+ls
+cd /root/UTN-FRA_SO_Examenes
+ls
+rm -rf .git
+ls
+cd ..
