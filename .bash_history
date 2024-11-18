@@ -576,3 +576,12 @@ ls
 rm -rf .git
 ls
 cd ..
+git add .
+git commit "Se hace cambios para arreglar error"
+git commit -m "Se hace cambios para arreglar error"
+git push origin main
+ls
+git submodule
+ls
+git submodule deinit -f UTN-FRA_SO_Examenes
+ls
