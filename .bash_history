@@ -411,3 +411,111 @@ clear
 git remote remove origin
 git remote add origin git@github.com:DemianMarmorato/UTNFRA_SO_2do_Parcial_MarmoratoDemian.git
 git remote -v
+git add .
+git commit -m "Subida de los ejercicios del Parcial"
+git push -u origin main
+git pull origin main
+git push -u origin main
+clear
+git pull origin main
+git pull origin main --allow-unrelated-histories
+git commit -m "Resueltos conflictos durante el pull"
+ls
+git add .
+git push origin main
+clear
+ls
+cd RTA_Examen_20241117/
+ls
+./ Punto_C.sh 
+./Punto_C.sh 
+./Punto_D.sh 
+clear
+ls
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+docker
+apt install docker
+apt install docker.io
+docker info
+ls
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+sudo systemctl enable docker
+ls
+sudo systemctl enable docker
+nano Punto_B.sh 
+nano Punto_C.sh 
+docker login -u demmoratto
+nano Punto_C.sh 
+./Punto_C.sh
+nano Punto_C.sh 
+./Punto_C.sh
+sudo usermod -a -G docker $(whoami)
+./Punto_C.sh
+cat Punto_C.sh 
+clear
+docker login
+docker build -t marmoratodemian/pagina1-marmorato .
+docker push marmoratodemian/pagina1-marmorato
+nano Punto_C.sh
+./Punto_C.sh
+clear
+nano Punto_D.sh 
+./Punto_D.sh
+[200~ls ~/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml
+ls ~/root/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml
+ls /root/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml
+ls ~/root/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml
+ls /root/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml
+clear
+ls
+nano Punto_D.sh
+nano Punto_C.sh
+./Punto_C.sh
+./Punto_A.sh
+clear
+./Punto_B.sh
+clear
+nano Punto_D.sh
+sudo bash Punto_D.sh
+[localhost]
+localhost ansible_connection=local
+nano Punto_D.sh
+sudo bash Punto_D.sh
+ansible_connection=local
+[localhost]
+localhost ansible_connection=local
+cd /root/UTN-FRA_SO_Examenes/202406/ansible/inventory
+ls -l
+sudo nano hosts
+cd /root
+ls
+ls -l
+ls
+cd RTA_Examen_20241117/
+ls
+sudo bash Punto_D.sh
+clear
+ls
+cd ..
+ls
+cd ..
+ls
+sudo nano /root/UTN-FRA_SO_Examenes/202406/ansible/playbook.yml
+cd root
+ls
+cd RTA
+cd RTA_Examen_20241117/
+nano Punto_D.sh 
+sudo bash Punto_D.sh
+ls
+cd ..
+ls
+clear
+cd ..
+ls
+cd root
+ls
+git push origin main
+clear
+git add.

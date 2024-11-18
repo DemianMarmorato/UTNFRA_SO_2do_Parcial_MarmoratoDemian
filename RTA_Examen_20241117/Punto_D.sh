@@ -1,15 +1,108 @@
 #!/bin/bash
-cd ~/root/UTN-FRA_SO_Examenes/202406/ansible
-# Crear carpeta 2do_parcial con alumno y equipo
-sudo mkdir -p /tmp/2do_parcial/{alumno,equipo}
 
-echo "Nombre: Demian Marmorato: Marmorato" > "~/root/UTN-FRA_SO_Examenes/202406/ansible/tmp/2do_parcial/alumno/datos_alumno.txt"
-echo "Division: 115" >> "~/root/UTN-FRA_SO_Examenes/202406/ansible/tmp/2do_parcial/alumno/datos_alumno.txt"
+# Configuraciones iniciales
+BASE_DIR=/root/UTN-FRA_SO_Examenes/202406/ansible
+ROLE_DIR="$BASE_DIR/roles/2do_parcial"
+TEMPLATE_DIR="$ROLE_DIR/templates"
+TASKS_FILE="$ROLE_DIR/tasks/main.yml"
+PLAYBOOK_FILE="$BASE_DIR/playbook.yml"
 
-echo "IP: $(ifconfig | grep -m 1 'inet ' | awk '{print $2}')" > ~/root/UTN-FRA_SO_Examenes/202406/ansible/tmp/2do_parcial/equipo/datos_equipo.txt
-echo "Distribucion: $(lsb_release -d | head -n 1 | awk '{print$2}')" >> ~/root/UTN-FRA_SO_Examenes/202406/ansible/tmp/2do_parcial/equipo/datos_equipo.txt"
-echo "Cantidad de Cores: $(cat /proc/cpuinfo | grep 'processor' | awk 'NR==2 {print $3}')" >> ~/root/UTN-FRA_SO_Examenes/202406/ansible/tmp/2do_parcial/equipo/datos_equipo.txt"
+# Crear directorios necesarios
+mkdir -p $TEMPLATE_DIR
 
-echo "%2PSupervisores ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/2PSupervisores
+# Crear archivo de plantilla datos_alumno.txt.j2 si no existe
+if [ ! -f "$TEMPLATE_DIR/datos_alumno.txt.j2" ]; then
+    cat <<EOL > $TEMPLATE_DIR/datos_alumno.txt.j2
+Nombre: {{ nombre }}
+Apellido: {{ apellido }}
+Division: {{ division }}
+EOL
+    echo "Archivo $TEMPLATE_DIR/datos_alumno.txt.j2 creado."
+else
+    echo "Archivo $TEMPLATE_DIR/datos_alumno.txt.j2 ya existe."
+fi
 
-cd /root
+# Crear archivo de plantilla datos_equipo.txt.j2 si no existe
+if [ ! -f "$TEMPLATE_DIR/datos_equipo.txt.j2" ]; then
+    cat <<EOL > $TEMPLATE_DIR/datos_equipo.txt.j2
+IP: {{ ip }}
+Distribución: {{ distro }}
+Cantidad de Cores: {{ cores }}
+EOL
+    echo "Archivo $TEMPLATE_DIR/datos_equipo.txt.j2 creado."
+else
+    echo "Archivo $TEMPLATE_DIR/datos_equipo.txt.j2 ya existe."
+fi
+
+# Crear archivo de tareas main.yml si no existe
+if [ ! -f "$TASKS_FILE" ]; then
+    cat <<EOL > $TASKS_FILE
+- name: Crear directorios necesarios
+  file:
+    path: "/tmp/2do_parcial/{{ item }}"
+    state: directory
+    mode: '0755'
+  loop:
+    - alumno
+    - equipo
+
+- name: Crear archivo de datos del alumno
+  template:
+    src: templates/datos_alumno.txt.j2
+    dest: /tmp/2do_parcial/alumno/datos_alumno.txt
+  vars:
+    nombre: "Demian"
+    apellido: "Marmorato"
+    division: "115"
+
+- name: Crear archivo de datos del equipo
+  template:
+    src: templates/datos_equipo.txt.j2
+    dest: /tmp/2do_parcial/equipo/datos_equipo.txt
+  vars:
+    ip: "tu-ip"
+    distro: "tu-distro"
+    cores: "tu-cantidad-de-cores"
+
+- name: Configurar sudoers para el grupo 2PSupervisores
+  copy:
+    content: '%2PSupervisores ALL=(ALL) NOPASSWD: ALL'
+    dest: /etc/sudoers.d/2psupervisores
+    validate: 'visudo -cf %s'
+EOL
+    echo "Archivo $TASKS_FILE creado."
+else
+    echo "Archivo $TASKS_FILE ya existe."
+fi
+
+# Crear el archivo playbook.yml si no existe
+if [ ! -f "$PLAYBOOK_FILE" ]; then
+    cat <<EOL > $PLAYBOOK_FILE
+- name: Configuración del 2do Parcial
+  hosts: localhost
+  tasks:
+    - include_role:
+        name: 2do_parcial
+EOL
+    echo "Archivo $PLAYBOOK_FILE creado."
+else
+    echo "Archivo $PLAYBOOK_FILE ya existe."
+fi
+
+# Crear o verificar el archivo hosts
+INVENTORY_FILE="$BASE_DIR/inventory/hosts"
+if [ ! -f "$INVENTORY_FILE" ]; then
+    mkdir -p $(dirname $INVENTORY_FILE)
+    cat <<EOL > $INVENTORY_FILE
+[localhost]
+localhost ansible_connection=local
+EOL
+    echo "Archivo $INVENTORY_FILE creado."
+else
+    echo "Archivo $INVENTORY_FILE ya existe."
+fi
+
+# Ejecutar el playbook de Ansible
+cd $BASE_DIR
+ansible-playbook -i inventory/hosts playbook.yml
+
